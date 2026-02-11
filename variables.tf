@@ -36,14 +36,14 @@ EOT
     resource_group_name    = string
     retention_interval     = string
     version                = string
-    cleanup_preference     = optional(string, "Always")
+    cleanup_preference     = optional(string) # Default: "Always"
     command_line           = optional(string)
     force_update_tag       = optional(string)
     primary_script_uri     = optional(string)
     script_content         = optional(string)
     supporting_script_uris = optional(list(string))
     tags                   = optional(map(string))
-    timeout                = optional(string, "P1D")
+    timeout                = optional(string) # Default: "P1D"
     container = optional(object({
       container_group_name = optional(string)
     }))
