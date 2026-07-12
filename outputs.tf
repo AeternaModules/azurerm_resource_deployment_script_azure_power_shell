@@ -1,3 +1,7 @@
+output "resource_deployment_script_azure_power_shells_id" {
+  description = "Map of id values across all resource_deployment_script_azure_power_shells, keyed the same as var.resource_deployment_script_azure_power_shells"
+  value       = { for k, v in azurerm_resource_deployment_script_azure_power_shell.resource_deployment_script_azure_power_shells : k => v.id }
+}
 output "resource_deployment_script_azure_power_shells_cleanup_preference" {
   description = "Map of cleanup_preference values across all resource_deployment_script_azure_power_shells, keyed the same as var.resource_deployment_script_azure_power_shells"
   value       = { for k, v in azurerm_resource_deployment_script_azure_power_shell.resource_deployment_script_azure_power_shells : k => v.cleanup_preference }
