@@ -23,7 +23,7 @@ resource "azurerm_resource_deployment_script_azure_power_shell" "resource_deploy
   }
 
   dynamic "environment_variable" {
-    for_each = each.value.environment_variable != null ? [each.value.environment_variable] : []
+    for_each = each.value.environment_variable != null ? each.value.environment_variable : []
     content {
       name         = environment_variable.value.name
       secure_value = environment_variable.value.secure_value

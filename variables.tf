@@ -47,11 +47,11 @@ EOT
     container = optional(object({
       container_group_name = optional(string)
     }))
-    environment_variable = optional(object({
+    environment_variable = optional(list(object({
       name         = string
       secure_value = optional(string)
       value        = optional(string)
-    }))
+    })))
     identity = optional(object({
       identity_ids = set(string)
       type         = string
