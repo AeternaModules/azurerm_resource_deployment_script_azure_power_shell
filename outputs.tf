@@ -12,7 +12,7 @@ output "resource_deployment_script_azure_power_shells_command_line" {
 }
 output "resource_deployment_script_azure_power_shells_container" {
   description = "Map of container values across all resource_deployment_script_azure_power_shells, keyed the same as var.resource_deployment_script_azure_power_shells"
-  value       = { for k, v in azurerm_resource_deployment_script_azure_power_shell.resource_deployment_script_azure_power_shells : k => v.container if v.container != null && length(v.container) > 0 }
+  value       = { for k, v in azurerm_resource_deployment_script_azure_power_shell.resource_deployment_script_azure_power_shells : k => one(v.container) if v.container != null && length(v.container) > 0 }
 }
 output "resource_deployment_script_azure_power_shells_environment_variable" {
   description = "Map of environment_variable values across all resource_deployment_script_azure_power_shells, keyed the same as var.resource_deployment_script_azure_power_shells"
@@ -25,7 +25,7 @@ output "resource_deployment_script_azure_power_shells_force_update_tag" {
 }
 output "resource_deployment_script_azure_power_shells_identity" {
   description = "Map of identity values across all resource_deployment_script_azure_power_shells, keyed the same as var.resource_deployment_script_azure_power_shells"
-  value       = { for k, v in azurerm_resource_deployment_script_azure_power_shell.resource_deployment_script_azure_power_shells : k => v.identity if v.identity != null && length(v.identity) > 0 }
+  value       = { for k, v in azurerm_resource_deployment_script_azure_power_shell.resource_deployment_script_azure_power_shells : k => one(v.identity) if v.identity != null && length(v.identity) > 0 }
 }
 output "resource_deployment_script_azure_power_shells_location" {
   description = "Map of location values across all resource_deployment_script_azure_power_shells, keyed the same as var.resource_deployment_script_azure_power_shells"
@@ -57,7 +57,7 @@ output "resource_deployment_script_azure_power_shells_script_content" {
 }
 output "resource_deployment_script_azure_power_shells_storage_account" {
   description = "Map of storage_account values across all resource_deployment_script_azure_power_shells, keyed the same as var.resource_deployment_script_azure_power_shells"
-  value       = { for k, v in azurerm_resource_deployment_script_azure_power_shell.resource_deployment_script_azure_power_shells : k => v.storage_account if v.storage_account != null && length(v.storage_account) > 0 }
+  value       = { for k, v in azurerm_resource_deployment_script_azure_power_shell.resource_deployment_script_azure_power_shells : k => one(v.storage_account) if v.storage_account != null && length(v.storage_account) > 0 }
   sensitive   = true
 }
 output "resource_deployment_script_azure_power_shells_supporting_script_uris" {
